@@ -35,8 +35,6 @@ If Jev is unreachable, the hook falls back to normal permissions (or to `ask` wi
 ## Install
 
 ```bash
-pip install jev-guard                # from PyPI
-# or directly from GitHub:
 pip install git+https://github.com/ashishdhillon/jev-guard
 export TYPESAFE_API_KEY="..."        # from console.typesafe.ai; keep it out of repos
 jev-guard install                    # prints the settings.json snippet
