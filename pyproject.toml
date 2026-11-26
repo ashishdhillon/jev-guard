@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "jev-guard"
@@ -36,8 +36,8 @@ dev = ["pytest"]
 [project.scripts]
 jev-guard = "jev_guard.cli:main"
 
-[tool.hatch.build.targets.wheel]
-packages = ["src/jev_guard"]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
