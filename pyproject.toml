@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jev-guard"
+version = "0.1.0"
+description = "Claude Code PreToolUse hook that uses TypeSafe's Jev to gate risky Bash commands"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ashish Dhillon", email = "ashishdhillon.dev@gmail.com" }]
+keywords = ["claude-code", "hooks", "security", "guardrails", "cli", "ai-safety"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ashishdhillon/jev-guard"
+Repository = "https://github.com/ashishdhillon/jev-guard"
+Issues = "https://github.com/ashishdhillon/jev-guard/issues"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+jev-guard = "jev_guard.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jev_guard"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
